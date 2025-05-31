@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuickShare</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📤 Upload File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+      <input type="file" name="file" required>
+      <button type="submit">⬆️ UPLOAD</button>
+    </form>
+    <div id="loading" style="display:none;">
+      <div class="spinner"></div>
+      <p>Uploading...</p>
+    </div>
+  </div>
+
+  <script>
+    function showLoading() {
+      document.getElementById('loading').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
